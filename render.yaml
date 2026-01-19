@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: pemograman-web
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: APP_KEY
+        generateValue: true
+
+databases:
+  - name: pemogramanweb-db
+    plan: free
